@@ -1,26 +1,40 @@
 const menuEmail = document.querySelector(".navbar-email");
+const menuHamIcon = document.querySelector(".menu");
+const menuCarritoIcon = document.querySelector(".navbar-shopping-cart");
 const desktopMenu = document.querySelector(".desktop-menu");
-const menuBurger = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".mobile-menu");
-const shopCar = document.querySelector(".navbar-shopping-cart");
 const aside = document.querySelector(".product-detail");
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
-menuBurger.addEventListener("click", toggleMobileMenu);
-shopCar.addEventListener("click", toggleCarAside);
+menuHamIcon.addEventListener("click", toggleMobileMenu);
+menuCarritoIcon.addEventListener("click", toggleCarritoAside);
 
 function toggleDesktopMenu() {
+  const isAsideClosed = aside.classList.contains("inactive");
+
+  if (!isAsideClosed) {
+    aside.classList.add("inactive");
+  }
+
   desktopMenu.classList.toggle("inactive");
 }
 
 function toggleMobileMenu() {
+  const isAsideClosed = aside.classList.contains("inactive");
+
+  if (!isAsideClosed) {
+    aside.classList.add("inactive");
+  }
+
   mobileMenu.classList.toggle("inactive");
 }
-function toggleCarAside() {
 
-const inMobileMenuClosed =mobileMenu.classList.contains('inactive')
-const isAsideClosed =aside.classList.contains('inactive')
+function toggleCarritoAside() {
+  const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
+
+  if (!isMobileMenuClosed) {
+    mobileMenu.classList.add("inactive");
+  }
 
   aside.classList.toggle("inactive");
-  if(mobileMenu.classList.contains('inactive'))
 }
